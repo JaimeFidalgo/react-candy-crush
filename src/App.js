@@ -113,9 +113,12 @@ const App = () => {
     const dragEnd = () => {
         const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'))
         const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'))
-
+        // console.log(currentColorArrangement[squareBeingDraggedId])
+        // console.log(currentColorArrangement[squareBeingReplacedId])
         currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
         currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src')
+        // console.log(currentColorArrangement[squareBeingDraggedId])
+        // console.log(currentColorArrangement[squareBeingReplacedId])
 
         const validMoves = [
             squareBeingDraggedId - 1,
@@ -125,17 +128,14 @@ const App = () => {
         ]
 
         const validMove = validMoves.includes(squareBeingReplacedId)
+        console.log(validMove)
 
-        const isAColumnOfFour = checkForColumnOfFour()
-        const isARowOfFour = checkForRowOfFour()
-        const isAColumnOfThree = checkForColumnOfThree()
-        const isARowOfThree = checkForRowOfThree()
+     
 
-        if (squareBeingReplacedId &&
-            validMove &&
-            (isARowOfThree || isARowOfFour || isAColumnOfFour || isAColumnOfThree)) {
+        if (squareBeingReplacedId && validMove===true && (checkForRowOfThree() || checkForRowOfFour() || checkForColumnOfFour() || checkForColumnOfThree())) {
             setSquareBeingDragged(null)
             setSquareBeingReplaced(null)
+            console.log("jaime")
         } else {
             currentColorArrangement[squareBeingReplacedId] = squareBeingReplaced.getAttribute('src')
             currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.getAttribute('src')
