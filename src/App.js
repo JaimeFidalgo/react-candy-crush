@@ -128,14 +128,14 @@ const App = () => {
         ]
 
         const validMove = validMoves.includes(squareBeingReplacedId)
-        console.log(validMove)
+        
 
      
 
         if (squareBeingReplacedId && validMove===true && (checkForRowOfThree() || checkForRowOfFour() || checkForColumnOfFour() || checkForColumnOfThree())) {
             setSquareBeingDragged(null)
             setSquareBeingReplaced(null)
-            console.log("jaime")
+            
         } else {
             currentColorArrangement[squareBeingReplacedId] = squareBeingReplaced.getAttribute('src')
             currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.getAttribute('src')
