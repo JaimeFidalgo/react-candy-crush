@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Prompt&display=swap');
+
 .app{
   display:flex;
   padding: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/fondo.png");
 }
 
 .game{
@@ -8,9 +14,31 @@
   height: 560px;
   display: flex;
   flex-wrap: wrap;
+  border: 5px solid green;
+  padding: 30px;
+  background-image: url("./images/patron.png")
 }
 
 .game img{
   width: 70px;
   height: 70px;
+}
+
+.scoreboard{
+  margin-bottom: 20px;
+  border: 2px solid blue;
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Prompt', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(218, 199, 242  );
+}
+
+.header h1{
+  font-family: 'Prompt', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: purple;
 }
